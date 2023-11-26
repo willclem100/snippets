@@ -7,8 +7,8 @@ export default function SnippetCreatePage() {
     "use server";
 
     //Check the user's inputs and make sure they're valid
-    const title = formData.get("title"); //title comes from the name attribute on the input in the form below
-    const code = formData.get("code");
+    const title = formData.get("title") as string; //title comes from the name attribute on the input in the form below
+    const code = formData.get("code") as string;
 
     //Create a new record in the database
     const snippet = await db.snippet.create({
